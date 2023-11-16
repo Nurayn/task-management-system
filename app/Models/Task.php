@@ -29,15 +29,11 @@ class Task extends Model
 
     public function getLocationAttribute($value)
     {
-        list($lat, $lng) = explode(',', $value);
-        return [
-            'lat' => $lat,
-            'lng' => $lng,
-        ];
-    }
-
-    public function setLocationAttribute($value)
-    {
-        $this->attributes['location'] = implode(',', $value);
+        if ($value) {
+            list($lat, $lng) = explode(',', $value);
+            return $lat.','.$lng;
+        } else {
+            return [null,null,];
+        }
     }
 }

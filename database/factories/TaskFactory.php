@@ -21,7 +21,7 @@ class TaskFactory extends Factory
             'title' => $this->faker->sentence,
             'description' => $this->faker->paragraph,
             'due_date' => $this->faker->date,
-            'location' => [$this->faker->latitude . ',' . $this->faker->longitude],
+            'location' => $this->faker->latitude . ',' . $this->faker->longitude,
             'priority' => $this->faker->randomElement(['low', 'medium', 'high']),
             'user_id' => rand(1, 10),
         ];

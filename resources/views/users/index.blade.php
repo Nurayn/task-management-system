@@ -8,6 +8,7 @@
                 <div class="card-header">{{ __('User List') }}</div>
 
                 <div class="card-body">
+                    <div class="table-responsive">
                     <table class="table">
                         <thead>
                           <tr>
@@ -22,10 +23,11 @@
                                 <th scope="row">{{ $user->id }}</th>
                                 <td>{{ $user->name }}</td>
                                 <td>{{ $user->email }}</td>
-                            </tr>                                    
+                            </tr>
                             @endforeach
                         </tbody>
                       </table>
+                    </div>
                 </div>
             </div>
         </div>

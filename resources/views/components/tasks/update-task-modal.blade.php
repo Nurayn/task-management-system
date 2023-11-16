@@ -10,8 +10,8 @@
                 <form id="updateTaskForm">
                     @csrf
                     <div class="modal-body">
-                        @csrf
                         <!-- Title -->
+                        <input type="hidden" name="id" id="id">
                         <div class="form-group">
                             <label for="title">Title</label>
                             <input type="text" class="form-control" id="title_update" name="title" required>
@@ -43,16 +43,6 @@
                                 <option value="low">Low</option>
                                 <option value="medium">Medium</option>
                                 <option value="high">High</option>
-                            </select>
-                        </div>
-
-                        <!-- User (Select Box) -->
-                        <div class="form-group">
-                            <label for="user">Assign User</label>
-                            <select class="form-control" id="user_id_update" name="user_id" required>
-                                @foreach($users as $user)
-                                    <option value="{{ $user->id }}">{{ $user->name }}</option>
-                                @endforeach
                             </select>
                         </div>
                     </div>

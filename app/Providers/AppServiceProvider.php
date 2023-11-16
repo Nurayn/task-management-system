@@ -4,6 +4,7 @@ namespace App\Providers;
 
 use App\View\Components\Tasks\CreateTaskModal;
 use App\View\Components\Tasks\UpdateTaskModal;
+use App\View\Components\Tasks\DeleteTaskModal;
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\ServiceProvider;
 
@@ -24,5 +25,6 @@ class AppServiceProvider extends ServiceProvider
     {
         Blade::component('update-task-modal', UpdateTaskModal::class);
         Blade::component('create-task-modal', CreateTaskModal::class);
+        Blade::component('delete-task-modal', DeleteTaskModal::class);
     }
 }

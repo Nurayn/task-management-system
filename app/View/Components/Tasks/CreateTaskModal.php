@@ -8,13 +8,11 @@ use Illuminate\View\Component;
 
 class CreateTaskModal extends Component
 {
-    public $users;
     /**
      * Create a new component instance.
      */
-    public function __construct($users)
+    public function __construct()
     {
-        $this->users = $users;
     }
 
 

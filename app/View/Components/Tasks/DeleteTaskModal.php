@@ -1,18 +1,19 @@
 <?php
 
-namespace App\View\Components\Tasks;
+namespace App\View\Components\tasks;
 
 use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 
-class UpdateTaskModal extends Component
+class DeleteTaskModal extends Component
 {
     /**
      * Create a new component instance.
      */
     public function __construct()
     {
+        //
     }
 
     /**
@@ -20,6 +21,6 @@ class UpdateTaskModal extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('components.tasks.update-task-modal');
+        return view('components.tasks.delete-task-modal');
     }
 }

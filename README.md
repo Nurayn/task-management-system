@@ -1,5 +1,9 @@
 To install the application first migration then uncomment the DatabaseSeeder file code and run the seed command.
-Random users and tasks will be created with roles and permission. First user will be admin and rest will be normal users.
+<br>
+Random users and tasks will be created with roles and permission. 
+<br>
+First user will be admin and rest will be normal users.
+<br>
 Lastly! add open weather api key in .env file 
 
 OPENWAETHER_API_KEY=API_KEY

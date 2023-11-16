@@ -91,6 +91,42 @@
             function reloadTable() {
                 dataTable.ajax.reload();
             }
+            $(document).on('click', '.display-weather', function(){
+                toastr.options = {
+                "closeButton": true,
+                "debug": false,
+                "newestOnTop": false,
+                "progressBar": false,
+                "positionClass": "toast-bottom-center",
+                "preventDuplicates": false,
+                "onclick": null,
+                "showDuration": "300",
+                "hideDuration": "1000",
+                "timeOut": "5000",
+                "extendedTimeOut": "1000",
+                "showEasing": "swing",
+                "hideEasing": "linear",
+                "showMethod": "fadeIn",
+                "hideMethod": "fadeOut"
+                };
+                var coordinates = $("#location_update").val();
+                $.ajax({
+                    type: 'GET',
+                    url: '/get-weather-information/' + coordinates,
+                    data: $(this).serialize(),
+                    success: function(response) {
+                        console.log(response);
+                        if (response.success) {
+                            toastr.info('Temperature: ' + response.data.main.temp + '°C <br> Condition: ' + response.data.weather[0].description);
+                        } else {
+                            toastr.error('Task creation failed');
+                        }
+                    },
+                    error: function(error) {
+                        toastr.error('An error occurred while processing your request');
+                    }
+                });
+            });
             $(document).on('click', '.update-btn', function() {
                 $("#id").val($(this).data("task-id"));
                 $("#title_update").val($(this).data("task-title"));

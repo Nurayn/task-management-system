@@ -45,6 +45,11 @@
                                 <option value="high">High</option>
                             </select>
                         </div>
+                        <div class="form-group">
+                            <button type="button" class="btn btn-sm btn-secondary display-weather" id="display_weather_location" data-toggle="button" aria-pressed="true" autocomplete="off">
+                                Click to See Weather
+                            </button>
+                        </div>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>

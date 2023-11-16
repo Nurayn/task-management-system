@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('User List') }}</div>
+                <div class="card-header">{{ __('Task Details') }}</div>
 
                 <div class="card-body">
                     <div class="d-flex" style="flex-direction:column">
@@ -17,6 +17,12 @@
                         <strong>Priority :</strong> <h5>{{ ucfirst($task->priority) }}</h5>
                         @if (auth()->user()->getRoleNames()->first() == 'admin')
                         <strong>User :</strong> <h5>{{ $task->user->name }}</h5>
+                        @endif
+                        <hr>
+                        @if(isset($weatherByCoordinates))
+                            <h2>Weather Information</h2>
+                            <p>Temperature: {{ $weatherByCoordinates->main->temp }}°C</p>
+                            <p>Condition: {{ $weatherByCoordinates->weather[0]->description }}</p>
                         @endif
                     </div>
                 </div>

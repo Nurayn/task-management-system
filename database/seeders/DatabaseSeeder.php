@@ -12,6 +12,8 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
+        // uncomment these line if you want to seed the database
+
         // $this->call(PermissionsTableSeeder::class);
         // $this->call(RoleSeeder::class);
         // \App\Models\User::factory(10)->create()->each(function ($user) {
@@ -23,9 +25,6 @@ class DatabaseSeeder extends Seeder
         // });
         // $this->call(TaskSeeder::class);
 
-        // \App\Models\User::factory()->create([
-        //     'name' => 'Test User',
-        //     'email' => 'test@example.com',
-        // ]);
+        // uncomment these line if you want to seed the database
     }
 }

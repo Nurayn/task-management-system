@@ -6,11 +6,21 @@ use App\Models\Task;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
+use App\Services\WeatherService;
 
 
 class TaskController extends Controller
 {
     //
+    protected $weatherService;
+
+    // Inject the service into the constructor
+    public function __construct(WeatherService $weatherService)
+    {
+        // Assign the service instance to the class property
+        $this->weatherService = $weatherService;
+    }
+
     public function index()
     {
         $tasks = Task::all();
@@ -20,9 +30,17 @@ class TaskController extends Controller
 
     public function show(Task $task)
     {
-        return view('tasks.show', compact('task'));
+        $coordinates = explode(',', $task->location);
+        $weatherByCoordinates = $this->weatherService->getWeatherByCoordinates($coordinates[0], $coordinates[1]);
+        return view('tasks.show', compact('task', 'weatherByCoordinates'));
     }
 
+    public function getWeatherInformation($coordinates)
+    {
+        $coordinates = explode(',', $coordinates);
+        $weatherByCoordinates = $this->weatherService->getWeatherByCoordinates($coordinates[0], $coordinates[1]);
+        return response()->json(['success' => true, 'data' => $weatherByCoordinates], 200);
+    }
     public function getUserTasks()
     {
         $tasks = auth()->user()->tasks;

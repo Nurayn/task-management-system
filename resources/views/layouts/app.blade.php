@@ -8,7 +8,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>{{ config('app.name', 'Task Management System') }}</title>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.bunny.net">
@@ -37,6 +37,11 @@
 
         .toast-error {
             background-color: #f44336;
+            /* Red */
+        }
+
+        .toast-info {
+            background-color: #0dcaf0;
             /* Red */
         }
 

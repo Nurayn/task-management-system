@@ -31,4 +31,5 @@ Route::middleware('auth')->group(function () {
     Route::get('users/{user}', [App\Http\Controllers\UserController::class, 'profile'])->name('users.profile');
     Route::get('tasks', [App\Http\Controllers\TaskController::class, 'index'])->name('tasks.index');
     Route::get('tasks/{task}', [App\Http\Controllers\TaskController::class, 'show'])->name('tasks.show');
+    Route::get('get-weather-information/{coordinates}', [App\Http\Controllers\TaskController::class, 'getWeatherInformation'])->name('tasks.weather');
 });

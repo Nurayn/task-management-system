@@ -12,7 +12,16 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // \App\Models\User::factory(10)->create();
+        // $this->call(PermissionsTableSeeder::class);
+        // $this->call(RoleSeeder::class);
+        // \App\Models\User::factory(10)->create()->each(function ($user) {
+        //     if ($user->id == 1) {
+        //         $user->assignRole('admin');
+        //     }else{
+        //         $user->assignRole('user');
+        //     }
+        // });
+        // $this->call(TaskSeeder::class);
 
         // \App\Models\User::factory()->create([
         //     'name' => 'Test User',

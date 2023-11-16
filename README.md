@@ -3,6 +3,7 @@ Random users and tasks will be created with roles and permission. First user wil
 Lastly! add open weather api key in .env file 
 
 OPENWAETHER_API_KEY=API_KEY
+<br>
 OPENWEATHER_API_LANG=en
 
 After all these proccess start the application with "php artisan serve" and "npm run dev" commands. 
